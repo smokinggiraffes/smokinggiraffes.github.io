@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6m4ssexmagbi"]
+
+[ext_resource type="Script" path="res://UI/Casino/Slots/reel.gd" id="1_pvg02"]
+[ext_resource type="Texture2D" uid="uid://jlyuixh3xjw1" path="res://Assets/casino/slots/finalReelImg.png" id="3_6i1ya"]
+[ext_resource type="Texture2D" uid="uid://0h0np7u1g6tp" path="res://Assets/casino/slots/resizedFrame.png" id="4_e5qne"]
+[ext_resource type="Texture2D" uid="uid://cmr7t73rslhh8" path="res://Assets/casino/slots/resizedMask.png" id="5_or5ld"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w7msy"]
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sbs72"]
+light_mode = 2
+
+[node name="reel" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_pvg02")
+reelId = 1
+
+[node name="upperReel" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_w7msy")
+position = Vector2(0, -250)
+texture = ExtResource("3_6i1ya")
+offset = Vector2(0, 100)
+
+[node name="lowerReel" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_sbs72")
+texture = ExtResource("3_6i1ya")
+offset = Vector2(0, 100)
+
+[node name="reelFrame" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("4_e5qne")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("5_or5ld")

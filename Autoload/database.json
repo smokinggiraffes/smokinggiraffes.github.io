@@ -1,0 +1,17 @@
+{
+	"0": {
+		"texture" : "ak47.png",
+		"slot_type": 0,
+		"ATK" : 3
+	},
+	"1": {
+		"texture" : "pistol.png",
+		"slot_type": 0,
+		"ATK" : 3
+	},
+	"2": {
+		"texture" : "woodenSword.png",
+		"slot_type": 0,
+		"ATK" : 3
+	}
+}

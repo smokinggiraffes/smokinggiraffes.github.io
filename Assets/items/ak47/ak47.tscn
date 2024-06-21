@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://tb2vyt7ph2yf"]
+
+[ext_resource type="Script" path="res://Assets/items/ak47/ak47.gd" id="1_oe4vw"]
+[ext_resource type="Resource" uid="uid://cqumj11yjxtdh" path="res://Items/ak47/ak47.tres" id="2_7tsm7"]
+[ext_resource type="Texture2D" uid="uid://dha324heq3oog" path="res://Assets/items/ak47/ak47.png" id="2_aslxc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aux06"]
+radius = 9.0
+
+[node name="ak47_collectable" type="StaticBody2D"]
+script = ExtResource("1_oe4vw")
+item = ExtResource("2_7tsm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aslxc")
+
+[node name="interactable_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_aux06")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

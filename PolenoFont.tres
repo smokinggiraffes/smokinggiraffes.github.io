@@ -1,0 +1,5 @@
+[gd_resource type="SystemFont" format=3 uid="uid://bci11bhh41w8w"]
+
+[resource]
+font_names = PackedStringArray("Poleno")
+oversampling = 10.0

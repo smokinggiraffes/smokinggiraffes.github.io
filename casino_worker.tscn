@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb37vl1t3nb2g"]
+
+[ext_resource type="Texture2D" uid="uid://d3myjclohobyb" path="res://Tilesets/NPCs/CasinoWorker.png" id="1_yaw6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl1ku"]
+size = Vector2(12, 17)
+
+[node name="CasinoWorker" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yaw6f")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_tl1ku")

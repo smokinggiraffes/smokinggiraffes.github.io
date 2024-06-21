@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://xnjug8o62xxd"]
+
+[ext_resource type="Script" path="res://UI/inventory/slot.gd" id="1_xj5lb"]
+[ext_resource type="Script" path="res://UI/inventory/stats.gd" id="2_fao22"]
+
+[node name="slot" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+script = ExtResource("1_xj5lb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+script = ExtResource("2_fao22")
+
+[node name="debug" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "0"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmhaadeake4wq"]
+
+[ext_resource type="Script" path="res://Assets/items/shotgun/shotgun.gd" id="1_0hvsg"]
+[ext_resource type="Texture2D" uid="uid://sl8qu0475gd2" path="res://Assets/items/shotgun/shotgun32.png" id="1_ppokq"]
+[ext_resource type="Resource" uid="uid://dvphvq51ci22r" path="res://Items/shotgun/shotgun.tres" id="2_cmxol"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rxnv"]
+radius = 19.105
+
+[node name="shotgun" type="StaticBody2D"]
+script = ExtResource("1_0hvsg")
+item = ExtResource("2_cmxol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ppokq")
+centered = false
+
+[node name="interactable_area" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+position = Vector2(18, 15)
+shape = SubResource("CircleShape2D_1rxnv")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

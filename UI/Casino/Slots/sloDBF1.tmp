@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnlkksx2t41ao"]
+
+[ext_resource type="PackedScene" uid="uid://b6m4ssexmagbi" path="res://UI/Casino/Slots/reel.tscn" id="1_em2ls"]
+[ext_resource type="Script" path="res://UI/Casino/Slots/slot_machine_ui.gd" id="1_vmooi"]
+[ext_resource type="Texture2D" path="res://Assets/casino/slots/slotUi.png" id="2_5c3vt"]
+
+[node name="slot_machine_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vmooi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(208, 132)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -66.0
+offset_right = 104.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5c3vt")
+
+[node name="reelcontainer4" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -974.0
+offset_top = -470.0
+offset_right = -934.0
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="reel" parent="reelcontainer4" instance=ExtResource("1_em2ls")]
+position = Vector2(929, 470)
+scale = Vector2(1, 1)
+
+[node name="reelcontainer2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -938.0
+offset_top = -470.0
+offset_right = -898.0
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="reel" parent="reelcontainer2" instance=ExtResource("1_em2ls")]
+position = Vector2(929, 470)
+scale = Vector2(1, 1)
+reelId = 2
+
+[node name="reelcontainer3" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -902.0
+offset_top = -470.0
+offset_right = -862.0
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="reel" parent="reelcontainer3" instance=ExtResource("1_em2ls")]
+position = Vector2(929, 470)
+scale = Vector2(1, 1)
+reelId = 3
+
+[node name="spinButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -55.0
+offset_right = 105.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="decreaseBetButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -52.0
+offset_right = -41.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="increaseBetButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -52.0
+offset_right = 35.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="betAmount" type="Label" parent="."]
+z_index = 4
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -54.9999
+offset_right = 27.0
+offset_bottom = -28.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+text = "$"
+
+[node name="result" type="Label" parent="."]
+z_index = 4
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.9999
+offset_top = 32.0001
+offset_right = 24.0001
+offset_bottom = 58.0001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+text = "$"
+
+[connection signal="button_up" from="spinButton" to="." method="_on_spin_button_up"]
+[connection signal="button_up" from="decreaseBetButton" to="." method="_on_decrease_bet_button_up"]
+[connection signal="button_up" from="increaseBetButton" to="." method="_on_increase_bet_button_up"]

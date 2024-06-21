@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuy5oujrdbfir"]
+
+[ext_resource type="Texture2D" uid="uid://c1lggwd2fadcy" path="res://Assets/items/apple-icon.png" id="1_8p6x4"]
+[ext_resource type="Script" path="res://apple_collectable.gd" id="1_bfcam"]
+[ext_resource type="Resource" uid="uid://v5baxox33lnt" path="res://Items/apple/apple.tres" id="2_dskw3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvj2d"]
+radius = 4.12311
+
+[node name="apple_collectable" type="StaticBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_bfcam")
+item = ExtResource("2_dskw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8p6x4")
+
+[node name="interactable_area" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_gvj2d")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

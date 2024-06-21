@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkfdkxqid1vgm"]
+
+[ext_resource type="Texture2D" uid="uid://d0qw8ksl1tah8" path="res://Assets/casino/slots/testmachine.png" id="1_8jdd5"]
+[ext_resource type="Script" path="res://UI/Casino/Slots/slot_machine.gd" id="1_hhrf3"]
+[ext_resource type="PackedScene" uid="uid://dqfhlcomcciyd" path="res://Interaction/Interaction Area/interaction_area.tscn" id="2_3wkjd"]
+[ext_resource type="PackedScene" uid="uid://cnlkksx2t41ao" path="res://UI/Casino/Slots/slot_machine_ui.tscn" id="4_ft1up"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u33g0"]
+radius = 28.0179
+
+[node name="slot_machine" type="Node2D"]
+script = ExtResource("1_hhrf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8jdd5")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_3wkjd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_u33g0")
+
+[node name="slot_machine_ui" parent="." instance=ExtResource("4_ft1up")]

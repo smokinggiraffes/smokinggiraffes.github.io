@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkfdkxqid1vgm"]
+
+[ext_resource type="Script" path="res://UI/Casino/Slots/slot_machine.gd" id="1_hhrf3"]
+[ext_resource type="PackedScene" uid="uid://dqfhlcomcciyd" path="res://Interaction/Interaction Area/interaction_area.tscn" id="2_3wkjd"]
+[ext_resource type="Texture2D" uid="uid://butbts5loq6x4" path="res://Assets/casino/slots/slotMachine.png" id="2_r8i0b"]
+[ext_resource type="PackedScene" uid="uid://cnlkksx2t41ao" path="res://UI/Casino/Slots/slot_machine_ui.tscn" id="4_ft1up"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5on8"]
+size = Vector2(15, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u33g0"]
+radius = 23.0
+
+[node name="slot_machine" type="Node2D"]
+script = ExtResource("1_hhrf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r8i0b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_x5on8")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_3wkjd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_u33g0")
+
+[node name="UIOverlay" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="slot_machine_ui" parent="UIOverlay" instance=ExtResource("4_ft1up")]
+visible = false
+z_as_relative = false

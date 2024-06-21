@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://cw00buqatodfd"]
+
+[ext_resource type="Script" path="res://UI/inventory/inventory_item.gd" id="1_g3ss3"]
+[ext_resource type="Texture2D" uid="uid://c1lggwd2fadcy" path="res://Assets/items/apple-icon.png" id="2_88jk3"]
+[ext_resource type="Script" path="res://UI/inventory/inventory.gd" id="3_fvt54"]
+
+[sub_resource type="Resource" id="Resource_as4uq"]
+script = ExtResource("1_g3ss3")
+name = ""
+texture = ExtResource("2_88jk3")
+
+[sub_resource type="Resource" id="Resource_xvnxi"]
+script = ExtResource("1_g3ss3")
+name = ""
+texture = ExtResource("2_88jk3")
+
+[sub_resource type="Resource" id="Resource_hof7x"]
+script = ExtResource("1_g3ss3")
+name = ""
+texture = ExtResource("2_88jk3")
+
+[resource]
+script = ExtResource("3_fvt54")
+items = Array[ExtResource("1_g3ss3")]([SubResource("Resource_as4uq"), SubResource("Resource_xvnxi"), SubResource("Resource_hof7x")])
